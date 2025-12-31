@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>Work | Atharv Mandlavdiya</title>
+  <link rel="icon" type="image/svg+xml" href="../am.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+    
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-title {
+      font-family: 'Rowdies', sans-serif;
+      font-size: 1.8rem;
+      color: var(--text);
+    }
+    
+    .project-title span {
+      color: var(--primary);
+    }
+    
+    .project-badge {
+      background: rgba(230, 207, 120, 0.1);
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    .project-desc {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-desc ul {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+    
+    .project-desc li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-desc strong {
+      color: var(--primary);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .project-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    
+    .project-link:hover {
+      color: var(--accent);
+    }
+    
+    .tech-stack {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .tech-tag {
+      background: rgba(0, 234, 255, 0.1);
+      color: var(--accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+    }
+    
+    .project-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .project-images img {
+      width: 100%;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+    }
+    
+    .certificate-frame {
+      margin-top: 1.5rem;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+    }
+    
+    .certificate-frame iframe {
+      display: block;
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YH75G12GCG');
+  </script>
+</head>
+
+<body>
+  <div class="bg-animation"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="main.html" class="logo">atharv<span>mandlavdiya</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <nav>
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="work.html" class="active">Work</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <audio id="bg-music" loop>
+    <source src="../Theme.mp3" type="audio/mp3">
+  </audio>
+
+  <main>
+    <section style="padding-top: 8rem;">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h1 class="section-title">My Work</h1>
+        <p class="section-desc">Projects I've built and contributed to</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Millets Magic -->
+        <article class="project-card fade-in">
+          <div class="project-header">
+            <h2 class="project-title">Millets <span>Magic</span></h2>
+            <span class="project-badge">🏆 Featured</span>
+          </div>
+          
+          <p class="project-desc">
+            A complete website built from scratch featuring:
+            <ul>
+              <li><strong>Brevo</strong> for newsletter management</li>
+              <li><strong>Form Carry</strong> for form handling</li>
+              <li><strong>Zapier</strong> for email automation</li>
+            </ul>
+          </p>
+          
+          <div class="project-links">
+            <a href="https://milletsmagic.github.io/MilletsMagic/" target="_blank" class="project-link">🔗 Live Site</a>
+            <a href="https://github.com/MilletsMagic" target="_blank" class="project-link">📂 GitHub</a>
+            <a href="mailto:milletsmagic.us@gmail.com" class="project-link">📧 Contact</a>
+          </div>
+          
+          <div class="tech-stack">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </article>
+
+        <!-- NYRC -->
+        <article class="project-card fade-in">
+          <div class="project-header">
+            <h2 class="project-title">NYRC <span>Robotics Challenge</span></h2>
+            <span class="project-badge">🤖 Robotics</span>
+          </div>
+          
+          <p class="project-desc">
+            <strong>Regional Round:</strong>
+            <ul>
+              <li>Started with <strong>Arduino</strong>, <strong>HC-05</strong>, and <strong>L298 motor driver</strong></li>
+              <li>Upgraded to <strong>ESP32</strong> for better performance</li>
+              <li>Qualified for nationals with score <strong>3–0</strong></li>
+            </ul>
+            
+            <strong>National Round:</strong>
+            <ul>
+              <li>Built two bots using <strong>ESP32</strong> with Bluetooth control</li>
+              <li>Defender: <strong>300 RPM Johnson motor</strong></li>
+              <li>Attacker: <strong>500 RPM Johnson motor</strong></li>
+              <li>Match scores: <strong>6–3</strong>, <strong>6–0</strong></li>
+            </ul>
+          </p>
+          
+          <div class="project-links">
+            <a href="https://amity.edu/ais/nrc2024/" target="_blank" class="project-link">🔗 NYRC Website</a>
+          </div>
+          
+          <div class="tech-stack">
+            <span class="tech-tag">ESP32</span>
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">Bluetooth</span>
+            <span class="tech-tag">BTS Motor Driver</span>
+          </div>
+          
+          <div class="project-images">
+            <img src="../9b13ea47-59a9-4ce0-8ff5-bac8552505f6.jpeg" alt="Regional Round">
+            <img src="../af6f5b96-637b-4266-b36a-c19f31fcdc3d.jpeg" alt="National Round">
+          </div>
+        </article>
+
+        <!-- HackerRank Certificate -->
+        <article class="project-card fade-in">
+          <div class="project-header">
+            <h2 class="project-title">Hacker<span>Rank</span> Certificate</h2>
+            <span class="project-badge">📜 Certified</span>
+          </div>
+          
+          <p class="project-desc">
+            Earned certification from <strong>HackerRank</strong> for <strong>Python (Basic)</strong>.
+          </p>
+          
+          <div class="project-links">
+            <a href="https://www.hackerrank.com/certificates/49e2c6278ad2" target="_blank" class="project-link">🔗 View Certificate</a>
+            <a href="https://www.hackerrank.com" target="_blank" class="project-link">📂 HackerRank Profile</a>
+          </div>
+          
+          <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+          </div>
+          
+          <div class="certificate-frame">
+            <iframe src="https://www.hackerrank.com/certificates/iframe/49e2c6278ad2" width="100%" height="400" frameborder="0"></iframe>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/AtharvM02222" target="_blank" class="social-link" aria-label="GitHub" data-tooltip="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/atharvmandlavdiya/" target="_blank" class="social-link" aria-label="LinkedIn" data-tooltip="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.hackerrank.com/profile/atharv0m" target="_blank" class="social-link" aria-label="HackerRank" data-tooltip="HackerRank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1.285 0 9.75 4.886 10.392 6 .645 1.115.645 10.885 0 12S13.287 24 12 24s-9.75-4.885-10.395-6c-.641-1.115-.641-10.885 0-12C2.25 4.886 10.715 0 12 0zm2.295 6.799c-.141 0-.258.115-.258.258v3.875H9.963V6.908h.701c.141 0 .254-.115.254-.258 0-.094-.049-.176-.123-.221L9.223 4.896c-.142-.09-.313.02-.313.18v1.574H6.49c-.142 0-.258.116-.258.258v10.184c0 .143.116.258.258.258h.258c.142 0 .258-.115.258-.258v-3.875h4.074v3.875h-.701c-.141 0-.254.115-.254.258 0 .094.049.176.123.221l1.572 1.533c.142.09.313-.02.313-.18v-1.574h2.42c.142 0 .258-.116.258-.258V6.908h-.258c-.142 0-.258.115-.258.258v3.875H9.963V6.908h4.074v.149c0 .141.117.258.258.258h.258c.142 0 .258-.117.258-.258V6.908c0-.143-.116-.258-.258-.258h-2.258z"/></svg>
+      </a>
+      <a href="mailto:atharvam682@gmail.com" class="social-link" aria-label="Email" data-tooltip="Email">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+      </a>
+    </div>
+    <p class="footer-text">Made with <span class="heart">♥</span> by Atharv Mandlavdiya</p>
+  </footer>
+
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+  </button>
+
+  <script src="index.js"></script>
+  <script src="../version-switcher.js"></script>
+</body>
+</html>

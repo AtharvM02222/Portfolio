@@ -1,139 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <meta name="theme-color" content="#161616">
-    <title>About |</title>
-    <link rel="icon" type="image/png" href="./img/aboutimage.svg">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
-    <style>
-        .rowdies-font {
-            font-family: 'Rowdies', sans-serif;
-        }
-      </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#161616">
+  <title>About | Atharv Mandlavdiya</title>
+  <link rel="icon" type="image/svg+xml" href="am.svg">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 
-  gtag('config', 'G-YH75G12GCG');
-</script>
-</head>
-  <body class="full" bgcolor=rgb(0,0,0)>
-      <style>
-    h5 {
-      font-size: 140px;
-    }
-    
-    h6 {
-      font-size: 30px;
-    }
-
+  <style>
     h7 {
-    font-family: 'Rowdies', sans-serif;
-    font-size: 170px;
-    color: red;
-    }
-
-    p {
-      font-size: 25px;
-    }
-    p {
       font-family: 'Rowdies', sans-serif;
-      color: orangered; /* Change this to the desired color */
-  }
+      font-size: 170px;
+      color: red;
+    }
   </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YH75G12GCG');
+  </script>
+</head>
+
+<body class="full" bgcolor="rgb(0,0,0)">
   <header>
-  <div class="brandingg">
-    <div id="brandingg">
+    <div class="brandingg">
+      <div id="brandingg">
         <a href="main.html" class="brandingg">
-      <h6 class="nameStyle" style="color: rgb(255, 255, 255);">
-        atharv<span style="color: rgb(230, 207, 120);">mandlavdiya</span>
-      </h6>
-    </a>
-</header>
+          <h6 class="nameStyle" style="color: rgb(255, 255, 255); font-size: 30px;">
+            atharv<span style="color: rgb(230, 207, 120);">mandlavdiya</span>
+          </h6>
+        </a>
+      </div>
+    </div>
+  </header>
 
-        <audio id="bg-music" loop autoplay>
-        <source src="Theme.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+  <audio id="bg-music" loop autoplay>
+    <source src="Theme.mp3" type="audio/mp3">
+  </audio>
 
-    <script>
-        // Retrieve the last played time from localStorage
-        window.onload = function() {
-            const audio = document.getElementById('bg-music');
-            const lastTime = localStorage.getItem('lastPlayedTime');
-            if (lastTime) {
-                audio.currentTime = lastTime; // Start from where it left off
-            }
-            audio.play(); // Play the song
-        };
-
-        // Save the current time of the song before the user navigates away
-        window.onbeforeunload = function() {
-            const audio = document.getElementById('bg-music');
-            localStorage.setItem('lastPlayedTime', audio.currentTime);
-        };
-    </script>
-
-  <!-- ─────────────── ALIVE TIMER BLOCK ─────────────── -->
-  <div class="new" style="margin-top:100px;">
-    <h7>Time I’ve Been Alive:</h7>
+  <div class="new" style="margin-top:100px; text-align: center;">
+    <h7>Time I've Been Alive:</h7>
     <div id="lifeTimer" style="display:flex; justify-content:center; font-size:40px; flex-wrap:wrap; gap:30px; margin-top:30px;">
       <div>
-        <span id="lifeYears"    style="font-size:120px; font-weight:bold;">00</span>
+        <span id="lifeYears" style="font-size:120px; font-weight:bold; color: white;">00</span>
         <div class="label">Years</div>
       </div>
       <div>
-        <span id="lifeDays"     style="font-size:120px; font-weight:bold;">00</span>
+        <span id="lifeDays" style="font-size:120px; font-weight:bold; color: white;">00</span>
         <div class="label">Days</div>
       </div>
       <div>
-        <span id="lifeHours"    style="font-size:120px; font-weight:bold;">00</span>
+        <span id="lifeHours" style="font-size:120px; font-weight:bold; color: white;">00</span>
         <div class="label">Hours</div>
       </div>
       <div>
-        <span id="lifeMinutes"  style="font-size:120px; font-weight:bold;">00</span>
+        <span id="lifeMinutes" style="font-size:120px; font-weight:bold; color: white;">00</span>
         <div class="label">Minutes</div>
       </div>
       <div>
-        <span id="lifeSeconds"  style="font-size:120px; font-weight:bold;">00</span>
+        <span id="lifeSeconds" style="font-size:120px; font-weight:bold; color: white;">00</span>
         <div class="label">Seconds</div>
       </div>
     </div>
   </div>
-  <!-- ──────────────────────────────────────────────── -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      netlifyIdentity.init();
-
-      // When user logs in via widget, go to cloud
-      netlifyIdentity.on("login", () => {
-        window.location.href = "cloud.html";
-      });
+      if (window.netlifyIdentity) {
+        netlifyIdentity.init();
+        netlifyIdentity.on("login", () => {
+          window.location.href = "cloud.html";
+        });
+      }
     });
 
-    // Open widget when "Alive" is selected
     document.addEventListener("selectionchange", () => {
-      if (window.getSelection().toString().trim() === "Alive") {
+      if (window.getSelection().toString().trim() === "Alive" && window.netlifyIdentity) {
         netlifyIdentity.open();
       }
     });
   </script>
-  <!-- Link to your external about.js file -->
+
   <script src="about.js"></script>
+  <script src="version-switcher.js"></script>
 </body>
 </html>

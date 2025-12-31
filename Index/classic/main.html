@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#161616">
-  <title>Atharv Mandlavdiya |</title>
+  <title>Atharv Mandlavdiya | Classic</title>
 
-  <link rel="icon" type="image/svg+xml" href="am.svg">
+  <link rel="icon" href="../am.svg" type="image/svg+xml">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
@@ -57,11 +57,11 @@
   </header>
 
   <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
-    <img src="STP.svg" alt="Scroll to Top">
+    <img src="../STP.svg" alt="Scroll to Top">
   </button>
 
   <audio id="bg-music" loop autoplay>
-    <source src="Theme.mp3" type="audio/mp3">
+    <source src="../Theme.mp3" type="audio/mp3">
   </audio>
 
   <main>
@@ -84,7 +84,7 @@
 
         <p style="color:white">Hello! I'm <strong class="rowdies-font">Atharv Mandlavdiya.</strong></p>
 
-        <img src="triangle.png" alt="decorative triangle">
+        <img src="../triangle.png" alt="decorative triangle">
 
         <div class="new">
           <h7>Countdown To My Birthday Every year:</h7>
@@ -95,6 +95,8 @@
             <div><span id="seconds">00</span><div class="label">Seconds</div></div>
           </div>
         </div>
+
+        <script src="index.js" defer></script>
 
         <div class="linee" aria-hidden="true"></div>
 
@@ -174,9 +176,9 @@
         <p>by Atharv Mandlavdiya</p>
 
         <div class="icon-container">
-          <a href="https://github.com/AtharvM02222" target="_blank"><img src="github.png" class="icon" alt="GitHub"></a>
-          <a href="https://www.linkedin.com/in/atharvmandlavdiya/" target="_blank"><img src="hackerrank.svg" class="icon" alt="LinkedIn"></a>
-          <a href="https://www.hackerrank.com/profile/atharv0m" target="_blank"><img src="hackerrank.svg" class="icon" alt="HackerRank"></a>
+          <a href="https://github.com/AtharvM02222" target="_blank"><img src="../github.png" class="icon" alt="GitHub"></a>
+          <a href="https://www.linkedin.com/in/atharvmandlavdiya/" target="_blank"><img src="../hackerrank.svg" class="icon" alt="LinkedIn"></a>
+          <a href="https://www.hackerrank.com/profile/atharv0m" target="_blank"><img src="../hackerrank.svg" class="icon" alt="HackerRank"></a>
         </div>
 
         <div style="text-align:center;color:orange;">
@@ -186,20 +188,6 @@
     </center>
   </main>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', (user) => console.log("Init done."));
-      Object.defineProperty(window, "admin", {
-        get: function() {
-          console.log("Opening login widget...");
-          window.netlifyIdentity.open();
-        }
-      });
-    }
-  </script>
-  
-  <script src="index.js"></script>
-  <script src="version-switcher.js"></script>
+  <script src="../version-switcher.js"></script>
 </body>
 </html>

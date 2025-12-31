@@ -1,35 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atharv Mandlavdiya |</title>
-    <link rel="icon" href="am.png" type="image/png">
-    <link rel="stylesheet" href="loading.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Atharv Mandlavdiya | Loading...</title>
+  <link rel="icon" href="am.svg" type="image/svg+xml">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YH75G12GCG');
+  </script>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@400;700&display=swap');
 
-  gtag('config', 'G-YH75G12GCG');
-</script>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    body, html {
+      height: 100%;
+      font-family: 'Rowdies', sans-serif;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    #loading-container {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    #typewriter-container {
+      font-size: 30px;
+      color: white;
+      text-align: center;
+    }
+
+    #typewriter-text {
+      border-right: 2px solid red;
+      padding-right: 5px;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
 </head>
 <body>
+  <audio id="bg-music" loop autoplay>
+    <source src="Theme.mp3" type="audio/mp3">
+  </audio>
 
-    <audio id="bg-music" loop autoplay>
-        <source src="Theme.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    
+  <div id="loading-container">
     <div id="typewriter-container">
-        <span id="typewriter-text"></span>
+      <span id="typewriter-text"></span>
     </div>
+  </div>
 
-    <script src="loading.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const text = " Initializing...";
+      const typewriterEl = document.getElementById("typewriter-text");
+      
+      // Check which version to load
+      const savedVersion = localStorage.getItem('websiteVersion') || 'classic';
+      const mainPageURL = savedVersion === 'modern' ? 'modern/main.html' : 'main.html';
+      
+      let i = 0;
+      let deleteIndex = text.length;
+      let isDeleting = false;
+      
+      function typeWriter() {
+        if (isDeleting) {
+          typewriterEl.textContent = text.substring(0, deleteIndex);
+          deleteIndex--;
+        } else {
+          typewriterEl.textContent = text.substring(0, i);
+          i++;
+        }
+        
+        let speed = isDeleting ? 50 : 150;
+        
+        if (!isDeleting && i === text.length) {
+          setTimeout(function() {
+            isDeleting = true;
+            typeWriter();
+          }, 500);
+        } else if (isDeleting && deleteIndex === 0) {
+          setTimeout(function() {
+            window.location.href = mainPageURL;
+          }, 500);
+        } else {
+          setTimeout(typeWriter, speed);
+        }
+      }
+      
+      typeWriter();
+      
+      // Audio handling
+      const audio = document.getElementById('bg-music');
+      const lastTime = localStorage.getItem('lastPlayedTime');
+      if (lastTime) {
+        audio.currentTime = parseFloat(lastTime);
+      }
+      audio.play().catch(() => {});
+      
+      window.addEventListener('beforeunload', function() {
+        localStorage.setItem('lastPlayedTime', audio.currentTime);
+      });
+      
+      // Fallback redirect
+      setTimeout(() => {
+        window.location.href = mainPageURL;
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
-
