@@ -149,6 +149,249 @@
       .life-block span { font-size: 1.8rem; }
       .life-block { min-width: 70px; padding: 1rem 0.75rem; }
     }
+
+    /* Ignore Tracker Section */
+    .ignore-tracker-section {
+      max-width: 1000px;
+      margin: 0 auto 4rem;
+    }
+
+    .ignore-tracker-card {
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      padding: 3rem;
+    }
+
+    .ignore-tracker-title {
+      font-family: 'Rowdies', sans-serif;
+      font-size: 1.8rem;
+      color: #ff6b6b;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .ignore-tracker-subtitle {
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Stats Overview */
+    .ignore-stats-overview {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .ignore-stat-box {
+      background: rgba(255, 107, 107, 0.1);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.5rem;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .ignore-stat-box .stat-value {
+      font-family: 'Rowdies', sans-serif;
+      font-size: 1.8rem;
+      color: #ff6b6b;
+    }
+
+    .ignore-stat-box .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Friend Cards Grid */
+    .ignore-friends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .friend-ignore-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .friend-ignore-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .friend-ignore-card.ignoring {
+      border-color: rgba(255, 107, 107, 0.5);
+      box-shadow: 0 0 20px rgba(255, 107, 107, 0.1);
+    }
+
+    .friend-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .friend-avatar {
+      font-size: 2.5rem;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--glass);
+      border-radius: 50%;
+    }
+
+    .friend-info h4 {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .friend-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+    }
+
+    .friend-status.ignoring {
+      background: rgba(255, 107, 107, 0.2);
+      color: #ff6b6b;
+    }
+
+    .friend-status.not-ignoring {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .status-dot.ignoring { background: #ff6b6b; }
+    .status-dot.not-ignoring { background: #22c55e; }
+
+    /* Stopwatch */
+    .current-ignore-timer {
+      background: rgba(255, 107, 107, 0.1);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .timer-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .timer-display {
+      font-family: 'Rowdies', sans-serif;
+      font-size: 1.5rem;
+      color: #ff6b6b;
+      letter-spacing: 2px;
+    }
+
+    /* Stats Row */
+    .friend-stats-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .friend-stat {
+      text-align: center;
+      flex: 1;
+    }
+
+    .friend-stat .value {
+      font-family: 'Rowdies', sans-serif;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .friend-stat .label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* Ignore History */
+    .ignore-history-toggle {
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1rem;
+      transition: var(--transition);
+    }
+
+    .ignore-history-toggle:hover {
+      border-color: var(--primary);
+      color: var(--text);
+    }
+
+    .ignore-history {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: var(--radius-sm);
+    }
+
+    .ignore-history.show { display: block; }
+
+    .history-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--glass-border);
+      font-size: 0.85rem;
+    }
+
+    .history-item:last-child { border-bottom: none; }
+
+    .history-date {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .history-reason {
+      color: #ff6b6b;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .ignore-stats-overview { gap: 0.75rem; }
+      .ignore-stat-box { min-width: 100px; padding: 0.75rem 1rem; }
+      .ignore-stat-box .stat-value { font-size: 1.4rem; }
+    }
   </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
@@ -212,6 +455,35 @@
             <span id="lifeSeconds">00</span>
             <div class="label">Seconds</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ignore Tracker Section -->
+    <section class="ignore-tracker-section fade-in">
+      <div class="ignore-tracker-card">
+        <h2 class="ignore-tracker-title">😔 Friend Ignore Tracker</h2>
+        <p class="ignore-tracker-subtitle">Tracking how long my friends have been ignoring me...</p>
+        
+        <!-- Overall Stats -->
+        <div class="ignore-stats-overview">
+          <div class="ignore-stat-box">
+            <div class="stat-value" id="totalFriends">0</div>
+            <div class="stat-label">Friends</div>
+          </div>
+          <div class="ignore-stat-box">
+            <div class="stat-value" id="currentlyIgnoring">0</div>
+            <div class="stat-label">Ignoring Me</div>
+          </div>
+          <div class="ignore-stat-box">
+            <div class="stat-value" id="totalIgnoreTime">0h</div>
+            <div class="stat-label">Total Ignored</div>
+          </div>
+        </div>
+
+        <!-- Friend Cards -->
+        <div class="ignore-friends-grid" id="ignoreFriendsGrid">
+          <!-- Cards will be populated by JavaScript -->
         </div>
       </div>
     </section>

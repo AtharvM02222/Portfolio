@@ -1,0 +1,27 @@
+{
+  "friends": [
+    {
+      "id": 1,
+      "name": "Pari",
+      "avatar": "👩",
+      "isIgnoring": false,
+      "currentIgnoreStart": null,
+      "totalIgnoreSeconds": 5209020,
+      "ignoreHistory": [
+        {
+          "start": "2025-11-12T07:24:00",
+          "end": "2026-01-11T14:21:00",
+          "reason": ""
+        }
+      ],
+      "ignoreStreak": 0,
+      "longestIgnore": 5209020
+    }
+  ],
+  "stats": {
+    "totalFriends": 1,
+    "currentlyIgnoring": 0,
+    "totalIgnoreTime": 5209020,
+    "averageIgnoreTime": 5209020
+  }
+}
