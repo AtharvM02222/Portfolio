@@ -150,6 +150,44 @@
     .certificate-frame iframe {
       display: block;
     }
+
+    /* Work Stats */
+    .work-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item .stat-value {
+      font-family: 'Rowdies', sans-serif;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .stat-item .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Filter buttons enhancement */
+    .filter-buttons {
+      margin-bottom: 2rem;
+    }
   </style>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
@@ -190,101 +228,19 @@
         <p class="section-desc">Projects I've built and contributed to</p>
       </div>
 
-      <div class="projects-grid">
-        <!-- Millets Magic -->
-        <article class="project-card fade-in">
-          <div class="project-header">
-            <h2 class="project-title">Millets <span>Magic</span></h2>
-            <span class="project-badge">🏆 Featured</span>
-          </div>
-          
-          <p class="project-desc">
-            A complete website built from scratch featuring:
-            <ul>
-              <li><strong>Brevo</strong> for newsletter management</li>
-              <li><strong>Form Carry</strong> for form handling</li>
-              <li><strong>Zapier</strong> for email automation</li>
-            </ul>
-          </p>
-          
-          <div class="project-links">
-            <a href="https://milletsmagic.github.io/MilletsMagic/" target="_blank" class="project-link">🔗 Live Site</a>
-            <a href="https://github.com/MilletsMagic" target="_blank" class="project-link">📂 GitHub</a>
-            <a href="mailto:milletsmagic.us@gmail.com" class="project-link">📧 Contact</a>
-          </div>
-          
-          <div class="tech-stack">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
-          </div>
-        </article>
+      <!-- Filter Buttons -->
+      <div class="filter-buttons" id="filterButtons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <!-- Buttons will be populated by JS -->
+      </div>
 
-        <!-- NYRC -->
-        <article class="project-card fade-in">
-          <div class="project-header">
-            <h2 class="project-title">NYRC <span>Robotics Challenge</span></h2>
-            <span class="project-badge">🤖 Robotics</span>
-          </div>
-          
-          <p class="project-desc">
-            <strong>Regional Round:</strong>
-            <ul>
-              <li>Started with <strong>Arduino</strong>, <strong>HC-05</strong>, and <strong>L298 motor driver</strong></li>
-              <li>Upgraded to <strong>ESP32</strong> for better performance</li>
-              <li>Qualified for nationals with score <strong>3–0</strong></li>
-            </ul>
-            
-            <strong>National Round:</strong>
-            <ul>
-              <li>Built two bots using <strong>ESP32</strong> with Bluetooth control</li>
-              <li>Defender: <strong>300 RPM Johnson motor</strong></li>
-              <li>Attacker: <strong>500 RPM Johnson motor</strong></li>
-              <li>Match scores: <strong>6–3</strong>, <strong>6–0</strong></li>
-            </ul>
-          </p>
-          
-          <div class="project-links">
-            <a href="https://amity.edu/ais/nrc2024/" target="_blank" class="project-link">🔗 NYRC Website</a>
-          </div>
-          
-          <div class="tech-stack">
-            <span class="tech-tag">ESP32</span>
-            <span class="tech-tag">Arduino</span>
-            <span class="tech-tag">Bluetooth</span>
-            <span class="tech-tag">BTS Motor Driver</span>
-          </div>
-          
-          <div class="project-images">
-            <img src="../9b13ea47-59a9-4ce0-8ff5-bac8552505f6.jpeg" alt="Regional Round">
-            <img src="../af6f5b96-637b-4266-b36a-c19f31fcdc3d.jpeg" alt="National Round">
-          </div>
-        </article>
+      <!-- Stats Overview -->
+      <div class="work-stats" id="workStats">
+        <!-- Stats will be populated by JS -->
+      </div>
 
-        <!-- HackerRank Certificate -->
-        <article class="project-card fade-in">
-          <div class="project-header">
-            <h2 class="project-title">Hacker<span>Rank</span> Certificate</h2>
-            <span class="project-badge">📜 Certified</span>
-          </div>
-          
-          <p class="project-desc">
-            Earned certification from <strong>HackerRank</strong> for <strong>Python (Basic)</strong>.
-          </p>
-          
-          <div class="project-links">
-            <a href="https://www.hackerrank.com/certificates/49e2c6278ad2" target="_blank" class="project-link">🔗 View Certificate</a>
-            <a href="https://www.hackerrank.com" target="_blank" class="project-link">📂 HackerRank Profile</a>
-          </div>
-          
-          <div class="tech-stack">
-            <span class="tech-tag">Python</span>
-          </div>
-          
-          <div class="certificate-frame">
-            <iframe src="https://www.hackerrank.com/certificates/iframe/49e2c6278ad2" width="100%" height="400" frameborder="0"></iframe>
-          </div>
-        </article>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Projects will be populated by JS -->
       </div>
     </section>
   </main>
@@ -313,5 +269,129 @@
 
   <script src="index.js"></script>
   <script src="../version-switcher.js"></script>
+  <script>
+    // Work page - Load projects from JSON
+    let workData = null;
+    let currentFilter = 'all';
+
+    // Create project card HTML
+    function createProjectCard(project) {
+      const featuresHTML = project.features.map(f => `<li>${f}</li>`).join('');
+      const linksHTML = project.links.map(l => 
+        `<a href="${l.url}" target="_blank" class="project-link">${l.icon} ${l.label}</a>`
+      ).join('');
+      const techHTML = project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
+      const imagesHTML = project.images.length > 0 
+        ? `<div class="project-images">${project.images.map(img => `<img src="${img}" alt="${project.title}">`).join('')}</div>` 
+        : '';
+      const certificateHTML = project.certificateEmbed 
+        ? `<div class="certificate-frame"><iframe src="${project.certificateEmbed}" width="100%" height="400" frameborder="0"></iframe></div>` 
+        : '';
+
+      return `
+        <article class="project-card fade-in visible" data-category="${project.category}">
+          <div class="project-header">
+            <h2 class="project-title">${project.title.replace(project.highlight, `<span>${project.highlight}</span>`)}</h2>
+            <span class="project-badge">${project.badge}</span>
+          </div>
+          
+          <p class="project-desc">
+            ${project.description}
+            ${project.features.length > 0 ? `<ul>${featuresHTML}</ul>` : ''}
+          </p>
+          
+          <div class="project-links">${linksHTML}</div>
+          
+          <div class="tech-stack">${techHTML}</div>
+          
+          ${imagesHTML}
+          ${certificateHTML}
+        </article>
+      `;
+    }
+
+    // Create filter buttons
+    function createFilterButtons(categories) {
+      const container = document.getElementById('filterButtons');
+      const allBtn = `<button class="filter-btn active" data-filter="all">All</button>`;
+      const categoryBtns = categories.map(cat => 
+        `<button class="filter-btn" data-filter="${cat.id}">${cat.icon} ${cat.name}</button>`
+      ).join('');
+      container.innerHTML = allBtn + categoryBtns;
+
+      // Add click handlers
+      container.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          filterProjects(btn.dataset.filter);
+        });
+      });
+    }
+
+    // Filter projects
+    function filterProjects(filter) {
+      currentFilter = filter;
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'block';
+          card.classList.add('visible');
+        } else {
+          card.style.display = 'none';
+          card.classList.remove('visible');
+        }
+      });
+    }
+
+    // Create stats
+    function createStats(stats) {
+      const container = document.getElementById('workStats');
+      container.innerHTML = `
+        <div class="stat-item">
+          <div class="stat-value">${stats.totalProjects}</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">${stats.githubRepos}</div>
+          <div class="stat-label">Repos</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">${stats.githubStars}</div>
+          <div class="stat-label">Stars</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">${stats.gamesPublished}</div>
+          <div class="stat-label">Games</div>
+        </div>
+      `;
+    }
+
+    // Load work data
+    async function loadWorkData() {
+      try {
+        const response = await fetch('work-data.json');
+        workData = await response.json();
+
+        // Render filter buttons
+        createFilterButtons(workData.categories);
+
+        // Render stats
+        createStats(workData.stats);
+
+        // Render projects
+        const grid = document.getElementById('projectsGrid');
+        grid.innerHTML = workData.projects.map(createProjectCard).join('');
+
+      } catch (error) {
+        console.error('Failed to load work data:', error);
+        document.getElementById('projectsGrid').innerHTML = 
+          '<p style="color: var(--text-muted); text-align: center;">Unable to load projects</p>';
+      }
+    }
+
+    // Initialize
+    loadWorkData();
+  </script>
 </body>
 </html>

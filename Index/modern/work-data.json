@@ -1,0 +1,237 @@
+{
+  "categories": [
+    {
+      "id": "featured",
+      "name": "Featured Projects",
+      "icon": "🏆"
+    },
+    {
+      "id": "games",
+      "name": "Game Development",
+      "icon": "🎮"
+    },
+    {
+      "id": "web",
+      "name": "Web Development",
+      "icon": "🌐"
+    },
+    {
+      "id": "robotics",
+      "name": "Robotics",
+      "icon": "🤖"
+    },
+    {
+      "id": "python",
+      "name": "Python Projects",
+      "icon": "🐍"
+    },
+    {
+      "id": "certificates",
+      "name": "Certificates",
+      "icon": "📜"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Millets Magic",
+      "highlight": "Magic",
+      "category": "featured",
+      "badge": "🏆 Featured",
+      "description": "A complete website built from scratch for a millet-based food business featuring newsletter management, form handling, and email automation.",
+      "features": [
+        "Brevo for newsletter management",
+        "Form Carry for form handling",
+        "Zapier for email automation",
+        "Responsive design"
+      ],
+      "links": [
+        { "label": "Live Site", "url": "https://milletsmagic.github.io/MilletsMagic/", "icon": "🔗" },
+        { "label": "GitHub", "url": "https://github.com/MilletsMagic", "icon": "📂" }
+      ],
+      "tech": ["HTML", "CSS", "JavaScript", "Brevo", "Zapier"],
+      "images": []
+    },
+    {
+      "id": 2,
+      "title": "NYRC Robotics",
+      "highlight": "Challenge",
+      "category": "robotics",
+      "badge": "🤖 Robotics",
+      "description": "National Youth Robotics Challenge - Built competitive robots for regional and national rounds.",
+      "features": [
+        "Regional: Arduino + HC-05 + L298, upgraded to ESP32",
+        "Qualified for nationals with score 3–0",
+        "National: Two ESP32 bots with Bluetooth control",
+        "Defender: 300 RPM Johnson motor",
+        "Attacker: 500 RPM Johnson motor",
+        "Match scores: 6–3, 6–0"
+      ],
+      "links": [
+        { "label": "NYRC Website", "url": "https://amity.edu/ais/nrc2024/", "icon": "🔗" }
+      ],
+      "tech": ["ESP32", "Arduino", "Bluetooth", "BTS Motor Driver", "C++"],
+      "images": ["../9b13ea47-59a9-4ce0-8ff5-bac8552505f6.jpeg", "../af6f5b96-637b-4266-b36a-c19f31fcdc3d.jpeg"]
+    },
+    {
+      "id": 3,
+      "title": "Robo Football",
+      "highlight": "Football",
+      "category": "robotics",
+      "badge": "⚽ Robotics",
+      "description": "Robot football project using ESP32 and motor controllers for competitive robot soccer.",
+      "features": [
+        "ESP32-based control system",
+        "Bluetooth connectivity",
+        "Custom motor control algorithms"
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/AtharvM02222/Robo-Football", "icon": "📂" }
+      ],
+      "tech": ["C++", "ESP32", "Arduino"],
+      "images": []
+    },
+    {
+      "id": 4,
+      "title": "Box Rush",
+      "highlight": "Rush",
+      "category": "games",
+      "badge": "🎮 Game",
+      "description": "A fast-paced arcade game built with Unity. Navigate through obstacles and collect points!",
+      "features": [
+        "Built with Unity Engine",
+        "Fast-paced gameplay",
+        "Score tracking system"
+      ],
+      "links": [
+        { "label": "Play on itch.io", "url": "https://atharvam.itch.io/boxrush", "icon": "🎮" }
+      ],
+      "tech": ["Unity", "C#"],
+      "images": []
+    },
+    {
+      "id": 5,
+      "title": "Adventure Fire",
+      "highlight": "Fire",
+      "category": "games",
+      "badge": "🎮 Game",
+      "description": "An adventure game with fire-themed mechanics and exciting gameplay.",
+      "features": [
+        "Adventure gameplay",
+        "Unity game engine",
+        "Custom game mechanics"
+      ],
+      "links": [
+        { "label": "Play on itch.io", "url": "https://atharvam.itch.io/adventurefire", "icon": "🎮" }
+      ],
+      "tech": ["Unity", "C#"],
+      "images": []
+    },
+    {
+      "id": 6,
+      "title": "FPS Prototype",
+      "highlight": "Prototype",
+      "category": "games",
+      "badge": "🎮 Game",
+      "description": "A first-person shooter prototype showcasing FPS mechanics and gameplay systems.",
+      "features": [
+        "First-person shooter mechanics",
+        "Shooter gameplay prototype",
+        "Unity-based development"
+      ],
+      "links": [
+        { "label": "Play on itch.io", "url": "https://atharvam.itch.io/shooter", "icon": "🎮" }
+      ],
+      "tech": ["Unity", "C#"],
+      "images": []
+    },
+    {
+      "id": 7,
+      "title": "Jarvis AI",
+      "highlight": "AI",
+      "category": "python",
+      "badge": "🤖 AI",
+      "description": "A Python-based AI assistant inspired by Iron Man's Jarvis. Voice commands and automation.",
+      "features": [
+        "Voice recognition",
+        "Task automation",
+        "Python-based backend"
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/AtharvM02222/Jarvis", "icon": "📂" }
+      ],
+      "tech": ["Python", "Speech Recognition", "AI"],
+      "images": []
+    },
+    {
+      "id": 8,
+      "title": "Python Projects",
+      "highlight": "Collection",
+      "category": "python",
+      "badge": "🐍 Python",
+      "description": "A collection of Python scripts and projects for learning and experimentation.",
+      "features": [
+        "Various Python scripts",
+        "Learning projects",
+        "Code experiments"
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/AtharvM02222/Python", "icon": "📂" }
+      ],
+      "tech": ["Python"],
+      "images": []
+    },
+    {
+      "id": 9,
+      "title": "Personal Website",
+      "highlight": "Portfolio",
+      "category": "web",
+      "badge": "🌐 Web",
+      "description": "My personal portfolio website showcasing my work, skills, and achievements.",
+      "features": [
+        "Modern responsive design",
+        "Dark theme with animations",
+        "Multiple page versions (Classic/Modern)"
+      ],
+      "links": [
+        { "label": "Live Site", "url": "https://atharvmandlavdiya.me", "icon": "🔗" },
+        { "label": "GitHub", "url": "https://github.com/AtharvM02222/website", "icon": "📂" }
+      ],
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "images": []
+    },
+    {
+      "id": 10,
+      "title": "HackerRank",
+      "highlight": "Python Basic",
+      "category": "certificates",
+      "badge": "📜 Certified",
+      "description": "Earned certification from HackerRank for Python (Basic) skills assessment.",
+      "features": [
+        "Python fundamentals",
+        "Problem solving",
+        "Verified certification"
+      ],
+      "links": [
+        { "label": "View Certificate", "url": "https://www.hackerrank.com/certificates/49e2c6278ad2", "icon": "📜" },
+        { "label": "HackerRank Profile", "url": "https://www.hackerrank.com/profile/Atharv0M", "icon": "👤" }
+      ],
+      "tech": ["Python"],
+      "certificateEmbed": "https://www.hackerrank.com/certificates/iframe/49e2c6278ad2",
+      "images": []
+    }
+  ],
+  "profiles": [
+    { "name": "GitHub", "url": "https://github.com/AtharvM02222", "icon": "github" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/atharvmandlavdiya/", "icon": "linkedin" },
+    { "name": "HackerRank", "url": "https://www.hackerrank.com/profile/Atharv0M", "icon": "hackerrank" },
+    { "name": "itch.io", "url": "https://atharvam.itch.io", "icon": "itchio" },
+    { "name": "Google Dev", "url": "https://g.dev/atharvmandlavdiya", "icon": "google" }
+  ],
+  "stats": {
+    "totalProjects": 10,
+    "githubRepos": 21,
+    "githubStars": 256,
+    "gamesPublished": 3
+  }
+}
