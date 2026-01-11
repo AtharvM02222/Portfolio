@@ -16,12 +16,30 @@
       ],
       "ignoreStreak": 0,
       "longestIgnore": 5209020
+    },
+    {
+      "id": 2,
+      "name": "Pâra",
+      "subtitle": "Pari ka bhai",
+      "avatar": "🧑",
+      "isIgnoring": false,
+      "currentIgnoreStart": null,
+      "totalIgnoreSeconds": 5297100,
+      "ignoreHistory": [
+        {
+          "start": "2025-11-09T15:31:00",
+          "end": "2026-01-09T20:56:00",
+          "reason": ""
+        }
+      ],
+      "ignoreStreak": 0,
+      "longestIgnore": 5297100
     }
   ],
   "stats": {
-    "totalFriends": 1,
+    "totalFriends": 2,
     "currentlyIgnoring": 0,
-    "totalIgnoreTime": 5209020,
-    "averageIgnoreTime": 5209020
+    "totalIgnoreTime": 10506120,
+    "averageIgnoreTime": 5253060
   }
 }

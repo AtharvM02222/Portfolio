@@ -84,7 +84,7 @@ function createFriendCard(friend) {
       <div class="friend-header">
         <div class="friend-avatar">${friend.avatar}</div>
         <div class="friend-info">
-          <h4>${friend.name}</h4>
+          <h4>${friend.name}${friend.subtitle ? ` <span style="font-size:0.75rem;color:var(--text-muted);font-weight:normal;">(${friend.subtitle})</span>` : ''}</h4>
           <span class="friend-status ${isIgnoring ? 'ignoring' : 'not-ignoring'}">
             <span class="status-dot ${isIgnoring ? 'ignoring' : 'not-ignoring'}"></span>
             ${isIgnoring ? 'Ignoring Me' : 'Not Ignoring'}
