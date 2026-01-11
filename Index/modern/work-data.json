@@ -2,17 +2,17 @@
   "categories": [
     {
       "id": "featured",
-      "name": "Featured Projects",
+      "name": "Featured",
       "icon": "🏆"
     },
     {
       "id": "games",
-      "name": "Game Development",
+      "name": "Games",
       "icon": "🎮"
     },
     {
       "id": "web",
-      "name": "Web Development",
+      "name": "Web",
       "icon": "🌐"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "id": "python",
-      "name": "Python Projects",
+      "name": "Python",
       "icon": "🐍"
     },
     {
@@ -54,11 +54,11 @@
     },
     {
       "id": 2,
-      "title": "NYRC Robotics",
-      "highlight": "Challenge",
+      "title": "NYRC Robo Football",
+      "highlight": "Football",
       "category": "robotics",
       "badge": "🤖 Robotics",
-      "description": "National Youth Robotics Challenge - Built competitive robots for regional and national rounds.",
+      "description": "National Youth Robotics Challenge - Built competitive robots for regional and national rounds of robot football competition.",
       "features": [
         "Regional: Arduino + HC-05 + L298, upgraded to ESP32",
         "Qualified for nationals with score 3–0",
@@ -68,31 +68,14 @@
         "Match scores: 6–3, 6–0"
       ],
       "links": [
-        { "label": "NYRC Website", "url": "https://amity.edu/ais/nrc2024/", "icon": "🔗" }
+        { "label": "NYRC Website", "url": "https://amity.edu/ais/nrc2024/", "icon": "🔗" },
+        { "label": "GitHub", "url": "https://github.com/AtharvM02222/Robo-Football", "icon": "📂" }
       ],
-      "tech": ["ESP32", "Arduino", "Bluetooth", "BTS Motor Driver", "C++"],
+      "tech": ["ESP32", "Arduino", "C++", "Bluetooth", "BTS Motor Driver"],
       "images": ["../9b13ea47-59a9-4ce0-8ff5-bac8552505f6.jpeg", "../af6f5b96-637b-4266-b36a-c19f31fcdc3d.jpeg"]
     },
     {
       "id": 3,
-      "title": "Robo Football",
-      "highlight": "Football",
-      "category": "robotics",
-      "badge": "⚽ Robotics",
-      "description": "Robot football project using ESP32 and motor controllers for competitive robot soccer.",
-      "features": [
-        "ESP32-based control system",
-        "Bluetooth connectivity",
-        "Custom motor control algorithms"
-      ],
-      "links": [
-        { "label": "GitHub", "url": "https://github.com/AtharvM02222/Robo-Football", "icon": "📂" }
-      ],
-      "tech": ["C++", "ESP32", "Arduino"],
-      "images": []
-    },
-    {
-      "id": 4,
       "title": "Box Rush",
       "highlight": "Rush",
       "category": "games",
@@ -110,27 +93,9 @@
       "images": []
     },
     {
-      "id": 5,
-      "title": "Adventure Fire",
-      "highlight": "Fire",
-      "category": "games",
-      "badge": "🎮 Game",
-      "description": "An adventure game with fire-themed mechanics and exciting gameplay.",
-      "features": [
-        "Adventure gameplay",
-        "Unity game engine",
-        "Custom game mechanics"
-      ],
-      "links": [
-        { "label": "Play on itch.io", "url": "https://atharvam.itch.io/adventurefire", "icon": "🎮" }
-      ],
-      "tech": ["Unity", "C#"],
-      "images": []
-    },
-    {
-      "id": 6,
-      "title": "FPS Prototype",
-      "highlight": "Prototype",
+      "id": 4,
+      "title": "FPS Shooter",
+      "highlight": "Shooter",
       "category": "games",
       "badge": "🎮 Game",
       "description": "A first-person shooter prototype showcasing FPS mechanics and gameplay systems.",
@@ -146,7 +111,7 @@
       "images": []
     },
     {
-      "id": 7,
+      "id": 5,
       "title": "Jarvis AI",
       "highlight": "AI",
       "category": "python",
@@ -164,7 +129,7 @@
       "images": []
     },
     {
-      "id": 8,
+      "id": 6,
       "title": "Python Projects",
       "highlight": "Collection",
       "category": "python",
@@ -182,7 +147,7 @@
       "images": []
     },
     {
-      "id": 9,
+      "id": 7,
       "title": "Personal Website",
       "highlight": "Portfolio",
       "category": "web",
@@ -201,7 +166,7 @@
       "images": []
     },
     {
-      "id": 10,
+      "id": 8,
       "title": "HackerRank",
       "highlight": "Python Basic",
       "category": "certificates",
@@ -219,6 +184,60 @@
       "tech": ["Python"],
       "certificateEmbed": "https://www.hackerrank.com/certificates/iframe/49e2c6278ad2",
       "images": []
+    },
+    {
+      "id": 9,
+      "title": "HackerRank",
+      "highlight": "Problem Solving",
+      "category": "certificates",
+      "badge": "📜 Certified",
+      "description": "Earned certification from HackerRank for Problem Solving (Basic) covering Data Structures and Algorithms.",
+      "features": [
+        "Arrays and Strings",
+        "Sorting and Searching",
+        "Basic algorithms"
+      ],
+      "links": [
+        { "label": "View Certificate", "url": "https://www.hackerrank.com/certificates/65a1b98322fe", "icon": "📜" },
+        { "label": "HackerRank Profile", "url": "https://www.hackerrank.com/profile/Atharv0M", "icon": "👤" }
+      ],
+      "tech": ["Data Structures", "Algorithms"],
+      "certificateEmbed": "https://www.hackerrank.com/certificates/iframe/65a1b98322fe",
+      "images": []
+    },
+    {
+      "id": 10,
+      "title": "Robo Nexus Website",
+      "highlight": "Nexus",
+      "category": "web",
+      "badge": "🌐 Web",
+      "description": "Official website for Robo Nexus robotics team/club with member information and team details.",
+      "features": [
+        "Team member profiles",
+        "Responsive design",
+        "Modern UI/UX"
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/AtharvM02222/robo-nexus-website", "icon": "📂" }
+      ],
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "images": []
+    },
+    {
+      "id": 11,
+      "title": "Robo Nexus Database",
+      "highlight": "Database",
+      "category": "web",
+      "badge": "🗄️ Backend",
+      "description": "MySQL database system for managing Robo Nexus team members, storing member data on cloud.",
+      "features": [
+        "Cloud-hosted MySQL database",
+        "Member management system",
+        "Clever Cloud hosting"
+      ],
+      "links": [],
+      "tech": ["MySQL", "Cloud", "Database"],
+      "images": []
     }
   ],
   "profiles": [
@@ -229,9 +248,9 @@
     { "name": "Google Dev", "url": "https://g.dev/atharvmandlavdiya", "icon": "google" }
   ],
   "stats": {
-    "totalProjects": 10,
+    "totalProjects": 11,
     "githubRepos": 21,
     "githubStars": 256,
-    "gamesPublished": 3
+    "gamesPublished": 2
   }
 }

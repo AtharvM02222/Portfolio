@@ -30,25 +30,26 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated Background */
+/* Animated Background - Optimized for performance */
 .bg-animation {
   position: fixed;
   inset: 0;
   z-index: -1;
+  background: var(--bg-dark);
 }
 
 .bg-animation::before {
   content: '';
   position: absolute;
-  width: 150%;
-  height: 150%;
-  top: -25%;
-  left: -25%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(120, 0, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 234, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(230, 207, 120, 0.08) 0%, transparent 40%);
-  animation: bgFloat 20s ease-in-out infinite;
+    radial-gradient(circle at 20% 80%, rgba(120, 0, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 234, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(230, 207, 120, 0.06) 0%, transparent 40%);
+  /* Removed animation for better performance */
 }
 
 @keyframes bgFloat {
@@ -509,6 +510,19 @@ section {
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+/* Disable float animation to prevent lag */
+.achievement-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  /* animation: float 3s ease-in-out infinite; - removed for performance */
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover img {
+  transform: translateY(-8px);
 }
 
 /* STATS */

@@ -261,18 +261,19 @@
     });
   }
 
-  // ==================== PARTICLES ====================
+  // ==================== PARTICLES (Reduced for performance) ====================
   const particlesContainer = document.createElement('div');
   particlesContainer.className = 'particles';
   document.body.appendChild(particlesContainer);
 
-  for (let i = 0; i < 30; i++) {
+  // Reduced from 30 to 10 particles for better performance
+  for (let i = 0; i < 10; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
     particle.style.left = Math.random() * 100 + '%';
     particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-    particle.style.width = (2 + Math.random() * 4) + 'px';
+    particle.style.animationDuration = (20 + Math.random() * 10) + 's';
+    particle.style.width = (2 + Math.random() * 3) + 'px';
     particle.style.height = particle.style.width;
     particlesContainer.appendChild(particle);
   }
