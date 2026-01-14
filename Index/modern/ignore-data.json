@@ -4,8 +4,8 @@
       "id": 1,
       "name": "Pari",
       "avatar": "👩",
-      "isIgnoring": false,
-      "currentIgnoreStart": null,
+      "isIgnoring": true,
+      "currentIgnoreStart": "2026-01-12T16:23:00",
       "totalIgnoreSeconds": 5209020,
       "ignoreHistory": [
         {
@@ -14,7 +14,7 @@
           "reason": "merko maan nhi tha"
         }
       ],
-      "ignoreStreak": 0,
+      "ignoreStreak": 1,
       "longestIgnore": 5209020
     },
     {
@@ -38,7 +38,7 @@
   ],
   "stats": {
     "totalFriends": 2,
-    "currentlyIgnoring": 0,
+    "currentlyIgnoring": 1,
     "totalIgnoreTime": 10506120,
     "averageIgnoreTime": 5253060
   }
