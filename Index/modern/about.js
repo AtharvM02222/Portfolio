@@ -66,11 +66,22 @@ function getCurrentIgnoreDuration(startTime) {
   return Math.floor((now - start) / 1000);
 }
 
+// Calculate current streak (days)
+function calculateStreak(startTime) {
+  if (!startTime) return 0;
+  const start = new Date(startTime);
+  const now = new Date();
+  const diffMs = now - start;
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  return days;
+}
+
 // Create friend card HTML
 function createFriendCard(friend) {
   const isIgnoring = friend.isIgnoring;
   const currentDuration = isIgnoring ? getCurrentIgnoreDuration(friend.currentIgnoreStart) : 0;
   const totalTime = friend.totalIgnoreSeconds + currentDuration;
+  const currentStreak = isIgnoring ? calculateStreak(friend.currentIgnoreStart) : friend.ignoreStreak;
   
   const historyHTML = friend.ignoreHistory.map(h => `
     <div class="history-item">
@@ -105,7 +116,7 @@ function createFriendCard(friend) {
           <div class="label">Total Time</div>
         </div>
         <div class="friend-stat">
-          <div class="value">${friend.ignoreStreak}</div>
+          <div class="value" data-streak="${isIgnoring ? friend.currentIgnoreStart : ''}">${currentStreak}</div>
           <div class="label">Streak</div>
         </div>
         <div class="friend-stat">
@@ -143,13 +154,23 @@ function updateOverviewStats() {
   document.getElementById('totalIgnoreTime').textContent = formatTime(ignoreData.stats.totalIgnoreTime);
 }
 
-// Update all running stopwatches
+// Update all running stopwatches and streaks
 function updateStopwatches() {
   const timers = document.querySelectorAll('.timer-display[data-start]');
   timers.forEach(timer => {
     const startTime = timer.getAttribute('data-start');
     const duration = getCurrentIgnoreDuration(startTime);
     timer.textContent = formatStopwatch(duration);
+  });
+  
+  // Update streaks
+  const streaks = document.querySelectorAll('.friend-stat .value[data-streak]');
+  streaks.forEach(streakEl => {
+    const startTime = streakEl.getAttribute('data-streak');
+    if (startTime) {
+      const days = calculateStreak(startTime);
+      streakEl.textContent = days;
+    }
   });
 }
 
