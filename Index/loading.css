@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rowdies:wght@400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0f;
+  overflow: hidden;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 0, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 234, 255, 0.1) 0%, transparent 50%);
+  animation: bgPulse 4s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+#loading-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Logo animation */
+.logo-loader {
+  font-family: 'Rowdies', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.logo-loader span {
+  color: #e6cf78;
+}
+
+/* Modern spinner */
+.spinner {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.spinner::before,
+.spinner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.spinner::before {
+  border-top-color: #e6cf78;
+  animation: spin 1s linear infinite;
+}
+
+.spinner::after {
+  border-right-color: #00eaff;
+  animation: spin 1.5s linear infinite reverse;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Typewriter text */
+#typewriter-container {
+  text-align: center;
+}
+
+#typewriter-text {
+  font-size: 1.2rem;
+  color: #a0a0b0;
+  border-right: 2px solid #e6cf78;
+  padding-right: 8px;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Progress bar */
+.progress-container {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #e6cf78, #00eaff);
+  border-radius: 2px;
+  animation: progress 2.5s ease-in-out forwards;
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
