@@ -1,5 +1,5 @@
-# Classic version - keep locally but don't track changes
-Index/classic/
+# Classic version backup - moved outside Index folder
+classic-backup/
 
 # Duplicate files to be deleted
 Index/duplicate-to-delete/

@@ -1,0 +1,245 @@
+{
+  "projects": [
+    {
+      "title": "Portfolio Website",
+      "highlight": "Portfolio",
+      "badge": "Web Development",
+      "category": "web",
+      "description": "Modern, responsive portfolio website showcasing my work and skills. Built with vanilla JavaScript and CSS with smooth animations, interactive countdown timers, and dynamic project loading.",
+      "features": [
+        "Responsive design for all devices",
+        "Smooth scroll animations and transitions",
+        "Interactive birthday countdown timer",
+        "Time alive stopwatch counter",
+        "Dynamic project loading from JSON",
+        "Custom cursor effects and particles",
+        "Music player with volume control",
+        "Theme toggle (dark/light mode)",
+        "GitHub stats integration"
+      ],
+      "tech": ["HTML5", "CSS3", "JavaScript", "Git", "GitHub Pages"],
+      "links": [
+        {
+          "url": "https://atharvmandlavdiya.me",
+          "icon": "🌐",
+          "label": "Live Site"
+        },
+        {
+          "url": "https://github.com/AtharvM02222/Portfolio",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Robo Nexus Discord Bot",
+      "highlight": "Bot",
+      "badge": "Automation",
+      "category": "automation",
+      "description": "Advanced Discord bot for robotics team management with stats tracking, member management, and automated notifications. Features real-time statistics and role management.",
+      "features": [
+        "Member statistics tracking",
+        "Automated role assignment",
+        "Real-time server stats display",
+        "Custom commands and responses",
+        "Event notifications"
+      ],
+      "tech": ["Python", "Discord.py", "SQLite", "Git"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/robo-nexus-bot",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Certificate Mailer System",
+      "highlight": "Mailer",
+      "badge": "Automation",
+      "category": "automation",
+      "description": "Automated certificate distribution system using Brevo API and n8n workflow automation. Successfully sent 90+ certificates for NYRC'25 robotics competition with rate limiting and error handling.",
+      "features": [
+        "Bulk email sending with rate limiting (1 email/40s)",
+        "PDF certificate attachment from Google Drive",
+        "Personalized HTML email templates",
+        "Discord webhook notifications",
+        "Delivery tracking and error handling",
+        "Auto-retry on failures"
+      ],
+      "tech": ["n8n", "Brevo API", "Discord Webhooks", "Google Drive API", "HTML"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/Certi-Mailer",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Python Projects Collection",
+      "highlight": "Python",
+      "badge": "Programming",
+      "category": "programming",
+      "description": "Collection of Python projects including automation scripts, games, utilities, and HackerRank solutions. Demonstrates proficiency in Python programming and problem-solving.",
+      "features": [
+        "Basic calculator with GUI",
+        "Mad Libs game generator",
+        "HackerRank problem solutions",
+        "Automation scripts",
+        "File manipulation utilities",
+        "OSINT tools for Instagram"
+      ],
+      "tech": ["Python", "Tkinter", "Git"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/Python",
+          "icon": "💻",
+          "label": "GitHub"
+        },
+        {
+          "url": "https://www.hackerrank.com/profile/Atharv0M",
+          "icon": "🏆",
+          "label": "HackerRank"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Millets Magic Website",
+      "highlight": "Millets",
+      "badge": "Web Development",
+      "category": "web",
+      "description": "Educational website promoting awareness about millets and their health benefits. Features responsive design and interactive content.",
+      "features": [
+        "Responsive web design",
+        "Educational content about millets",
+        "Interactive recipe sections",
+        "Health benefits information",
+        "Modern UI/UX"
+      ],
+      "tech": ["HTML5", "CSS3", "JavaScript"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/Millets",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Robo Football",
+      "highlight": "Football",
+      "badge": "Robotics",
+      "category": "robotics",
+      "description": "Arduino-based robot football player with autonomous navigation and ball detection. Competed in robotics competitions.",
+      "features": [
+        "Autonomous ball tracking",
+        "Motor control system",
+        "Sensor integration",
+        "Competition-ready design"
+      ],
+      "tech": ["C++", "Arduino", "Sensors", "Motors"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/Robo-Football",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Jarvis AI Assistant",
+      "highlight": "Jarvis",
+      "badge": "AI",
+      "category": "ai",
+      "description": "Voice-activated AI assistant inspired by Iron Man's Jarvis. Features speech recognition, text-to-speech, and various automation capabilities.",
+      "features": [
+        "Voice command recognition",
+        "Text-to-speech responses",
+        "Web automation",
+        "System control",
+        "Weather updates",
+        "News reading"
+      ],
+      "tech": ["Python", "Speech Recognition", "pyttsx3", "APIs"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/Jarvis",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "QR Code Generator",
+      "highlight": "QR",
+      "badge": "Utility",
+      "category": "utility",
+      "description": "Simple and efficient QR code generator with customization options. Generate QR codes for URLs, text, and contact information.",
+      "features": [
+        "Generate QR codes from text/URLs",
+        "Customizable size and colors",
+        "Save as PNG images",
+        "Batch generation support"
+      ],
+      "tech": ["Python", "qrcode", "PIL"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/QRCODE",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    },
+    {
+      "title": "Silk Visualizer",
+      "highlight": "Visualizer",
+      "badge": "Graphics",
+      "category": "graphics",
+      "description": "Interactive silk-like pattern generator creating beautiful symmetrical designs. Inspired by the Silk interactive generative art.",
+      "features": [
+        "Real-time pattern generation",
+        "Mouse-based interaction",
+        "Symmetrical designs",
+        "Color customization",
+        "Export functionality"
+      ],
+      "tech": ["Python", "Pygame", "Graphics"],
+      "links": [
+        {
+          "url": "https://github.com/AtharvM02222/silk-visualizer",
+          "icon": "💻",
+          "label": "GitHub"
+        }
+      ],
+      "images": [],
+      "certificateEmbed": ""
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Python Programming Certificate",
+      "issuer": "Unknown",
+      "date": "2024",
+      "description": "Certificate of completion for Python programming course",
+      "pdfPath": "pyc.pdf",
+      "certificateEmbed": ""
+    }
+  ]
+}
