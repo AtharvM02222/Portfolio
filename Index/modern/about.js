@@ -20,11 +20,13 @@ function updateLifeCounter() {
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
 
-  document.getElementById('lifeYears').textContent = years.toString().padStart(2, '0');
-  document.getElementById('lifeDays').textContent = days.toString().padStart(2, '0');
-  document.getElementById('lifeHours').textContent = hours.toString().padStart(2, '0');
-  document.getElementById('lifeMinutes').textContent = minutes.toString().padStart(2, '0');
-  document.getElementById('lifeSeconds').textContent = seconds.toString().padStart(2, '0');
+  const pad = (v) => v.toString().padStart(2, '0');
+
+  document.getElementById('lifeYears').style.setProperty('--value', pad(years));
+  document.getElementById('lifeDays').style.setProperty('--value', pad(days));
+  document.getElementById('lifeHours').style.setProperty('--value', pad(hours));
+  document.getElementById('lifeMinutes').style.setProperty('--value', pad(minutes));
+  document.getElementById('lifeSeconds').style.setProperty('--value', pad(seconds));
 }
 
 updateLifeCounter();

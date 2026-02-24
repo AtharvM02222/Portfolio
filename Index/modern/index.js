@@ -31,7 +31,7 @@
     let diff = next - now;
     
     if (diff <= 0) {
-      Object.values(els).forEach(el => el.textContent = '00');
+      Object.values(els).forEach(el => el.style.setProperty('--value', '0'));
       return;
     }
 
@@ -40,10 +40,10 @@
     const minutes = Math.floor(diff / 60000); diff %= 60000;
     const seconds = Math.floor(diff / 1000);
 
-    els.days.textContent = pad(days);
-    els.hours.textContent = pad(hours);
-    els.minutes.textContent = pad(minutes);
-    els.seconds.textContent = pad(seconds);
+    els.days.style.setProperty('--value', days);
+    els.hours.style.setProperty('--value', pad(hours));
+    els.minutes.style.setProperty('--value', pad(minutes));
+    els.seconds.style.setProperty('--value', pad(seconds));
   }
 
   updateCountdown();

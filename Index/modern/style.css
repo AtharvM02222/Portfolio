@@ -380,7 +380,7 @@ section {
   font-weight: 600;
 }
 
-/* COUNTDOWN */
+/* COUNTDOWN - DaisyUI Style */
 .countdown-card {
   max-width: 900px;
   margin: 0 auto;
@@ -397,43 +397,111 @@ section {
   margin-bottom: 2rem;
 }
 
-#timer {
+.countdown-grid {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.timer-block {
-  background: rgba(0, 0, 0, 0.3);
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.countdown {
+  display: inline-flex;
+  position: relative;
+}
+
+.countdown > span {
+  height: 5rem;
+  width: 4rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-sm);
-  padding: 1.5rem 2rem;
-  min-width: 100px;
-  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
-.timer-block:hover {
-  border-color: var(--primary);
-  transform: translateY(-5px);
-}
-
-.timer-block span {
-  display: block;
+.countdown > span::before {
+  content: attr(style);
+  content: var(--value);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Rowdies', sans-serif;
-  font-size: 3.5rem;
-  background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 0 2px 8px rgba(230, 207, 120, 0.3);
 }
 
-.timer-block .label {
-  font-size: 0.85rem;
+.countdown > span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.countdown-item .label {
+  font-size: 0.75rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 0.5rem;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+}
+
+/* Life countdown variant */
+.life-countdown .countdown > span::before {
+  color: #ff4757;
+  text-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+}
+
+.life-countdown .countdown > span {
+  background: linear-gradient(145deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.05));
+  border-color: rgba(255, 71, 87, 0.2);
+}
+
+/* Hover effects */
+.countdown-item:hover .countdown > span {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(230, 207, 120, 0.2);
+  transition: all 0.3s ease;
+}
+
+.life-countdown:hover .countdown > span {
+  border-color: #ff4757;
+  box-shadow: 0 6px 20px rgba(255, 71, 87, 0.2);
+}
+
+/* Responsive countdown */
+@media (max-width: 600px) {
+  .countdown > span {
+    height: 4rem;
+    width: 3.2rem;
+  }
+  
+  .countdown > span::before {
+    font-size: 2rem;
+  }
+  
+  .countdown-grid {
+    gap: 0.75rem;
+  }
 }
 
 /* SKILLS */

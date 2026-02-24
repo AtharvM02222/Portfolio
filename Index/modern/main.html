@@ -112,22 +112,30 @@
     <section class="countdown-section fade-in">
       <div class="countdown-card">
         <h2 class="countdown-title">🎂 Countdown To My Birthday</h2>
-        <div id="timer">
-          <div class="timer-block">
-            <span id="days">00</span>
+        <div id="timer" class="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown">
+              <span id="days" style="--value:0;"></span>
+            </span>
             <div class="label">Days</div>
           </div>
-          <div class="timer-block">
-            <span id="hours">00</span>
+          <div class="countdown-item">
+            <span class="countdown">
+              <span id="hours" style="--value:0;"></span>
+            </span>
             <div class="label">Hours</div>
           </div>
-          <div class="timer-block">
-            <span id="minutes">00</span>
-            <div class="label">Minutes</div>
+          <div class="countdown-item">
+            <span class="countdown">
+              <span id="minutes" style="--value:0;"></span>
+            </span>
+            <div class="label">Min</div>
           </div>
-          <div class="timer-block">
-            <span id="seconds">00</span>
-            <div class="label">Seconds</div>
+          <div class="countdown-item">
+            <span class="countdown">
+              <span id="seconds" style="--value:0;"></span>
+            </span>
+            <div class="label">Sec</div>
           </div>
         </div>
       </div>

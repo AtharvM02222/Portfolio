@@ -52,40 +52,93 @@
       margin-bottom: 2rem;
     }
     
-    #lifeTimer {
+    .countdown-grid {
       display: flex;
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
     }
     
-    .life-block {
-      background: rgba(255, 71, 87, 0.1);
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .countdown {
+      display: inline-flex;
+      position: relative;
+    }
+    
+    .countdown > span {
+      height: 5rem;
+      width: 4rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, rgba(255, 71, 87, 0.15), rgba(255, 71, 87, 0.05));
       border: 1px solid rgba(255, 71, 87, 0.2);
       border-radius: var(--radius-sm);
-      padding: 1.5rem 1rem;
-      min-width: 90px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
       transition: var(--transition);
     }
     
-    .life-block:hover {
-      border-color: #ff4757;
-      transform: translateY(-5px);
-    }
-    
-    .life-block span {
-      display: block;
+    .countdown > span::before {
+      content: attr(style);
+      content: var(--value);
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: 'Rowdies', sans-serif;
       font-size: 2.5rem;
+      font-weight: 700;
       color: #ff4757;
+      text-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
     }
     
-    .life-block .label {
+    .countdown > span::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .countdown-item .label {
       font-size: 0.75rem;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-top: 0.5rem;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+    }
+    
+    .countdown-item:hover .countdown > span {
+      border-color: #ff4757;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 71, 87, 0.2);
+    }
+    
+    @media (max-width: 600px) {
+      .countdown > span {
+        height: 4rem;
+        width: 3.2rem;
+      }
+      
+      .countdown > span::before {
+        font-size: 2rem;
+      }
+      
+      .countdown-grid {
+        gap: 0.75rem;
+      }
     }
     
     .about-content {
@@ -193,26 +246,36 @@
     <section class="life-timer-section fade-in">
       <div class="life-timer-card">
         <h2 class="life-timer-title">⏱️ Time I've Been Alive</h2>
-        <div id="lifeTimer">
-          <div class="life-block">
-            <span id="lifeYears">00</span>
+        <div id="lifeTimer" class="countdown-grid">
+          <div class="countdown-item life-countdown">
+            <span class="countdown">
+              <span id="lifeYears" style="--value:0;"></span>
+            </span>
             <div class="label">Years</div>
           </div>
-          <div class="life-block">
-            <span id="lifeDays">00</span>
+          <div class="countdown-item life-countdown">
+            <span class="countdown">
+              <span id="lifeDays" style="--value:0;"></span>
+            </span>
             <div class="label">Days</div>
           </div>
-          <div class="life-block">
-            <span id="lifeHours">00</span>
+          <div class="countdown-item life-countdown">
+            <span class="countdown">
+              <span id="lifeHours" style="--value:0;"></span>
+            </span>
             <div class="label">Hours</div>
           </div>
-          <div class="life-block">
-            <span id="lifeMinutes">00</span>
-            <div class="label">Minutes</div>
+          <div class="countdown-item life-countdown">
+            <span class="countdown">
+              <span id="lifeMinutes" style="--value:0;"></span>
+            </span>
+            <div class="label">Min</div>
           </div>
-          <div class="life-block">
-            <span id="lifeSeconds">00</span>
-            <div class="label">Seconds</div>
+          <div class="countdown-item life-countdown">
+            <span class="countdown">
+              <span id="lifeSeconds" style="--value:0;"></span>
+            </span>
+            <div class="label">Sec</div>
           </div>
         </div>
       </div>
