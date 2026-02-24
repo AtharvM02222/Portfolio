@@ -4,6 +4,9 @@ Index/classic/
 # Duplicate files to be deleted
 Index/duplicate-to-delete/
 
+# Modern folder removed
+Index/modern/
+
 # OS files
 .DS_Store
 .DS_Store?
