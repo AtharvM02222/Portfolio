@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
   <title>Atharv Mandlavdiya | Loading...</title>
-  <link rel="icon" href="am.svg" type="image/svg+xml">
+  <link rel="icon" href="images/am.svg" type="image/svg+xml">
   
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YH75G12GCG"></script>
@@ -57,7 +57,7 @@
 </head>
 <body>
   <audio id="bg-music" loop autoplay>
-    <source src="Theme.mp3" type="audio/mp3">
+    <source src="images/Theme.mp3" type="audio/mp3">
   </audio>
 
   <div id="loading-container">
@@ -71,9 +71,8 @@
       const text = " Initializing...";
       const typewriterEl = document.getElementById("typewriter-text");
       
-      // Check which version to load
-      const savedVersion = localStorage.getItem('websiteVersion') || 'classic';
-      const mainPageURL = savedVersion === 'modern' ? 'modern/main.html' : 'main.html';
+      // Redirect to main page
+      const mainPageURL = 'main.html';
       
       let i = 0;
       let deleteIndex = text.length;
