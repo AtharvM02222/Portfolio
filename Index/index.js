@@ -2,9 +2,7 @@
 (function() {
   'use strict';
 
-  // Birthday countdown (8 June 2011, 9:08 PM)
-  const BIRTH = new Date(2011, 5, 8, 21, 8, 0);
-
+  // Birthday countdown (8 June, 9:08 PM)
   function pad(v) {
     return String(v).padStart(2, '0');
   }
@@ -20,21 +18,27 @@
     if (!els.days) return;
 
     const now = new Date();
-    let next = new Date(now.getFullYear(), BIRTH.getMonth(), BIRTH.getDate(), BIRTH.getHours(), BIRTH.getMinutes(), BIRTH.getSeconds());
+    const currentYear = now.getFullYear();
     
-    if (next <= now) next.setFullYear(next.getFullYear() + 1);
+    // Create next birthday (June 8 at 9:08 PM)
+    let nextBirthday = new Date(currentYear, 5, 8, 21, 8, 0);
+    
+    // If birthday has passed this year, set to next year
+    if (nextBirthday <= now) {
+      nextBirthday = new Date(currentYear + 1, 5, 8, 21, 8, 0);
+    }
 
-    let diff = next - now;
+    const diff = nextBirthday - now;
     
     if (diff <= 0) {
       Object.values(els).forEach(el => el.textContent = '00');
       return;
     }
 
-    const days = Math.floor(diff / 86400000); diff %= 86400000;
-    const hours = Math.floor(diff / 3600000); diff %= 3600000;
-    const minutes = Math.floor(diff / 60000); diff %= 60000;
-    const seconds = Math.floor(diff / 1000);
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     els.days.textContent = pad(days);
     els.hours.textContent = pad(hours);
