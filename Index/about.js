@@ -3,16 +3,30 @@
 const birthDate = new Date(2011, 5, 8, 21, 8, 0); // 8 June 2011, 9:08 PM
 
 function updateLifeCounter() {
+  const els = {
+    years: document.getElementById('lifeYears'),
+    days: document.getElementById('lifeDays'),
+    hours: document.getElementById('lifeHours'),
+    minutes: document.getElementById('lifeMinutes'),
+    seconds: document.getElementById('lifeSeconds')
+  };
+
+  if (!els.years) {
+    console.log('Life counter elements not found');
+    return;
+  }
+
   const now = new Date();
   const diff = now - birthDate;
   
   if (diff < 0) {
     // If somehow the date is in the future, show zeros
-    document.getElementById('lifeYears').textContent = '00';
-    document.getElementById('lifeDays').textContent = '00';
-    document.getElementById('lifeHours').textContent = '00';
-    document.getElementById('lifeMinutes').textContent = '00';
-    document.getElementById('lifeSeconds').textContent = '00';
+    Object.values(els).forEach(el => {
+      if (el) {
+        el.style.setProperty('--value', 0);
+        el.textContent = '0';
+      }
+    });
     return;
   }
 
@@ -30,12 +44,36 @@ function updateLifeCounter() {
   const minutes = Math.floor(remainingAfterHours / 60);
   const seconds = remainingAfterHours % 60;
 
-  document.getElementById('lifeYears').textContent = years.toString().padStart(2, '0');
-  document.getElementById('lifeDays').textContent = days.toString().padStart(2, '0');
-  document.getElementById('lifeHours').textContent = hours.toString().padStart(2, '0');
-  document.getElementById('lifeMinutes').textContent = minutes.toString().padStart(2, '0');
-  document.getElementById('lifeSeconds').textContent = seconds.toString().padStart(2, '0');
+  // Update DaisyUI countdown - set both CSS variable and text content
+  if (els.years) {
+    els.years.style.setProperty('--value', years);
+    els.years.textContent = years;
+  }
+  if (els.days) {
+    els.days.style.setProperty('--value', days);
+    els.days.textContent = days;
+  }
+  if (els.hours) {
+    els.hours.style.setProperty('--value', hours);
+    els.hours.textContent = hours;
+  }
+  if (els.minutes) {
+    els.minutes.style.setProperty('--value', minutes);
+    els.minutes.textContent = minutes;
+  }
+  if (els.seconds) {
+    els.seconds.style.setProperty('--value', seconds);
+    els.seconds.textContent = seconds;
+  }
 }
 
-updateLifeCounter();
-setInterval(updateLifeCounter, 1000);
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    updateLifeCounter();
+    setInterval(updateLifeCounter, 1000);
+  });
+} else {
+  updateLifeCounter();
+  setInterval(updateLifeCounter, 1000);
+}

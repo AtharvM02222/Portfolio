@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   
   <link rel="stylesheet" href="style.css">
 
@@ -50,24 +52,34 @@
   <div class="new" style="margin-top:100px; text-align: center;">
     <h7>Time I've Been Alive:</h7>
     <div id="lifeTimer" style="display:flex; justify-content:center; font-size:40px; flex-wrap:wrap; gap:30px; margin-top:30px;">
-      <div>
-        <span id="lifeYears" style="font-size:120px; font-weight:bold; color: white;">00</span>
+      <div style="text-align: center;">
+        <span class="countdown font-mono text-8xl">
+          <span id="lifeYears" style="--value:0;"></span>
+        </span>
         <div class="label">Years</div>
       </div>
-      <div>
-        <span id="lifeDays" style="font-size:120px; font-weight:bold; color: white;">00</span>
+      <div style="text-align: center;">
+        <span class="countdown font-mono text-8xl">
+          <span id="lifeDays" style="--value:0;"></span>
+        </span>
         <div class="label">Days</div>
       </div>
-      <div>
-        <span id="lifeHours" style="font-size:120px; font-weight:bold; color: white;">00</span>
+      <div style="text-align: center;">
+        <span class="countdown font-mono text-8xl">
+          <span id="lifeHours" style="--value:0;"></span>
+        </span>
         <div class="label">Hours</div>
       </div>
-      <div>
-        <span id="lifeMinutes" style="font-size:120px; font-weight:bold; color: white;">00</span>
+      <div style="text-align: center;">
+        <span class="countdown font-mono text-8xl">
+          <span id="lifeMinutes" style="--value:0;"></span>
+        </span>
         <div class="label">Minutes</div>
       </div>
-      <div>
-        <span id="lifeSeconds" style="font-size:120px; font-weight:bold; color: white;">00</span>
+      <div style="text-align: center;">
+        <span class="countdown font-mono text-8xl">
+          <span id="lifeSeconds" style="--value:0;"></span>
+        </span>
         <div class="label">Seconds</div>
       </div>
     </div>

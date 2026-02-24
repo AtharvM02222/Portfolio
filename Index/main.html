@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jacquard+12&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="stylesheet" href="style.css">
 
@@ -88,11 +90,31 @@
 
         <div class="new">
           <h7>Countdown To My Birthday Every year:</h7>
-          <div id="timer" aria-live="polite">
-            <div><span id="days">00</span><div class="label">Days</div></div>
-            <div><span id="hours">00</span><div class="label">Hours</div></div>
-            <div><span id="minutes">00</span><div class="label">Minutes</div></div>
-            <div><span id="seconds">00</span><div class="label">Seconds</div></div>
+          <div id="timer" aria-live="polite" style="display: flex; gap: 30px; justify-content: center; margin-top: 30px;">
+            <div style="text-align: center;">
+              <span class="countdown font-mono text-6xl">
+                <span id="days" style="--value:0;"></span>
+              </span>
+              <div class="label">Days</div>
+            </div>
+            <div style="text-align: center;">
+              <span class="countdown font-mono text-6xl">
+                <span id="hours" style="--value:0;"></span>
+              </span>
+              <div class="label">Hours</div>
+            </div>
+            <div style="text-align: center;">
+              <span class="countdown font-mono text-6xl">
+                <span id="minutes" style="--value:0;"></span>
+              </span>
+              <div class="label">Minutes</div>
+            </div>
+            <div style="text-align: center;">
+              <span class="countdown font-mono text-6xl">
+                <span id="seconds" style="--value:0;"></span>
+              </span>
+              <div class="label">Seconds</div>
+            </div>
           </div>
         </div>
 

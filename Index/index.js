@@ -3,10 +3,6 @@
   'use strict';
 
   // Birthday countdown (8 June, 9:08 PM)
-  function pad(v) {
-    return String(v).padStart(2, '0');
-  }
-
   function updateCountdown() {
     const els = {
       days: document.getElementById('days'),
@@ -15,7 +11,10 @@
       seconds: document.getElementById('seconds')
     };
 
-    if (!els.days) return;
+    if (!els.days) {
+      console.log('Countdown elements not found');
+      return;
+    }
 
     const now = new Date();
     const currentYear = now.getFullYear();
@@ -31,7 +30,12 @@
     const diff = nextBirthday - now;
     
     if (diff <= 0) {
-      Object.values(els).forEach(el => el.textContent = '00');
+      Object.values(els).forEach(el => {
+        if (el) {
+          el.style.setProperty('--value', 0);
+          el.textContent = '0';
+        }
+      });
       return;
     }
 
@@ -40,14 +44,35 @@
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    els.days.textContent = pad(days);
-    els.hours.textContent = pad(hours);
-    els.minutes.textContent = pad(minutes);
-    els.seconds.textContent = pad(seconds);
+    // Update DaisyUI countdown - set both CSS variable and text content
+    if (els.days) {
+      els.days.style.setProperty('--value', days);
+      els.days.textContent = days;
+    }
+    if (els.hours) {
+      els.hours.style.setProperty('--value', hours);
+      els.hours.textContent = hours;
+    }
+    if (els.minutes) {
+      els.minutes.style.setProperty('--value', minutes);
+      els.minutes.textContent = minutes;
+    }
+    if (els.seconds) {
+      els.seconds.style.setProperty('--value', seconds);
+      els.seconds.textContent = seconds;
+    }
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  } else {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
 
   // Scroll to top button
   const scrollBtn = document.getElementById('scrollTopBtn');
