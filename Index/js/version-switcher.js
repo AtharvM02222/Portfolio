@@ -76,7 +76,7 @@
     
     let newUrl;
     if (isModern) {
-      // Switch to classic - go up one level
+      // Switch to classic - go to Index root
       newUrl = '../' + currentPage;
       localStorage.setItem('websiteVersion', 'classic');
     } else {

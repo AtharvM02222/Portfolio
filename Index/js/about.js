@@ -11,16 +11,12 @@ function updateLifeCounter() {
     seconds: document.getElementById('lifeSeconds')
   };
 
-  if (!els.years) {
-    console.log('Life counter elements not found');
-    return;
-  }
+  if (!els.years) return;
 
   const now = new Date();
   const diff = now - birthDate;
   
   if (diff < 0) {
-    // If somehow the date is in the future, show zeros
     Object.values(els).forEach(el => {
       if (el) {
         el.style.setProperty('--value', 0);
@@ -44,7 +40,7 @@ function updateLifeCounter() {
   const minutes = Math.floor(remainingAfterHours / 60);
   const seconds = remainingAfterHours % 60;
 
-  // Update DaisyUI countdown - set both CSS variable and text content
+  // Update countdown - set both CSS variable and text content
   if (els.years) {
     els.years.style.setProperty('--value', years);
     els.years.textContent = years;
@@ -67,13 +63,6 @@ function updateLifeCounter() {
   }
 }
 
-// Wait for DOM to be ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
-    updateLifeCounter();
-    setInterval(updateLifeCounter, 1000);
-  });
-} else {
-  updateLifeCounter();
-  setInterval(updateLifeCounter, 1000);
-}
+updateLifeCounter();
+setInterval(updateLifeCounter, 1000);
+
