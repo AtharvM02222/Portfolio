@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Root (loading screen → redirects to main.html) -->
+    <url>
+        <loc>https://atharvmandlavdiya.is-a.dev/</loc>
+        <lastmod>2026-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Home / Main portfolio page -->
+    <url>
+        <loc>https://atharvmandlavdiya.is-a.dev/main.html</loc>
+        <lastmod>2026-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Work / Projects (updated frequently) -->
+    <url>
+        <loc>https://atharvmandlavdiya.is-a.dev/work.html</loc>
+        <lastmod>2026-03-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- About -->
+    <url>
+        <loc>https://atharvmandlavdiya.is-a.dev/about.html</loc>
+        <lastmod>2026-03-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+</urlset>
