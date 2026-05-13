@@ -57,10 +57,6 @@
   </style>
 </head>
 <body>
-  <audio id="bg-music" loop autoplay>
-    <source src="images/Theme.mp3" type="audio/mp3">
-  </audio>
-
   <div id="loading-container">
     <div id="typewriter-container">
       <span id="typewriter-text"></span>
@@ -69,59 +65,33 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const text = " Initializing...";
+      const text = " Opening portfolio...";
       const typewriterEl = document.getElementById("typewriter-text");
       
       // Redirect to main page
       const mainPageURL = 'main.html';
       
       let i = 0;
-      let deleteIndex = text.length;
-      let isDeleting = false;
       
       function typeWriter() {
-        if (isDeleting) {
-          typewriterEl.textContent = text.substring(0, deleteIndex);
-          deleteIndex--;
-        } else {
-          typewriterEl.textContent = text.substring(0, i);
-          i++;
-        }
-        
-        let speed = isDeleting ? 50 : 150;
-        
-        if (!isDeleting && i === text.length) {
-          setTimeout(function() {
-            isDeleting = true;
-            typeWriter();
-          }, 500);
-        } else if (isDeleting && deleteIndex === 0) {
+        typewriterEl.textContent = text.substring(0, i);
+        i++;
+
+        if (i > text.length) {
           setTimeout(function() {
             window.location.href = mainPageURL;
-          }, 500);
+          }, 400);
         } else {
-          setTimeout(typeWriter, speed);
+          setTimeout(typeWriter, 90);
         }
       }
       
       typeWriter();
       
-      // Audio handling
-      const audio = document.getElementById('bg-music');
-      const lastTime = localStorage.getItem('lastPlayedTime');
-      if (lastTime) {
-        audio.currentTime = parseFloat(lastTime);
-      }
-      audio.play().catch(() => {});
-      
-      window.addEventListener('beforeunload', function() {
-        localStorage.setItem('lastPlayedTime', audio.currentTime);
-      });
-      
       // Fallback redirect
       setTimeout(() => {
         window.location.href = mainPageURL;
-      }, 3000);
+      }, 2400);
     });
   </script>
 </body>
