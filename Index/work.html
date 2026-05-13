@@ -82,6 +82,19 @@
       line-height: 1.8;
       margin-bottom: 1.5rem;
     }
+
+    .project-subtitle {
+      font-size: 0.75rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+
+    .project-outcomes {
+      margin: 0.4rem 0 1.3rem 1.2rem;
+    }
     
     .project-desc ul {
       margin: 1rem 0 1rem 1.5rem;
@@ -99,6 +112,14 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+    }
+
+    .work-note {
+      max-width: 760px;
+      margin: 0 auto 1.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
     
     .project-link {
@@ -216,17 +237,14 @@
     </div>
   </header>
 
-  <audio id="bg-music" loop>
-    <source src="images/Theme.mp3" type="audio/mp3">
-  </audio>
-
   <main>
     <section style="padding-top: 8rem;">
       <div class="section-header">
         <span class="section-tag">Portfolio</span>
         <h1 class="section-title">My Work</h1>
-        <p class="section-desc">Projects I've built and contributed to</p>
+        <p class="section-desc">Selected projects with links, code, and concrete outcomes.</p>
       </div>
+      <p class="work-note">Each card includes what was built, how it was built, and proof links to the actual project.</p>
 
       <!-- Filter Buttons -->
       <div class="filter-buttons" id="filterButtons">
@@ -294,11 +312,10 @@
             <span class="project-badge">${project.badge}</span>
           </div>
           
-          <p class="project-desc">
-            ${project.description}
-            ${project.features.length > 0 ? `<ul>${featuresHTML}</ul>` : ''}
-          </p>
+          <p class="project-desc">${project.description}</p>
+          ${project.features.length > 0 ? `<h3 class="project-subtitle">Key outcomes</h3><ul class="project-outcomes">${featuresHTML}</ul>` : ''}
           
+          <h3 class="project-subtitle">Proof links</h3>
           <div class="project-links">${linksHTML}</div>
           
           <div class="tech-stack">${techHTML}</div>

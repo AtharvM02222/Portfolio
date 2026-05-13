@@ -122,15 +122,13 @@
       "description": "Modern, responsive portfolio website showcasing my work and skills. Built with vanilla JavaScript and CSS with smooth animations, interactive countdown timers, and dynamic project loading.",
       "features": [
         "Responsive design for all devices",
-        "Smooth scroll animations and transitions",
+        "Smooth scroll and subtle section transitions",
         "Interactive birthday countdown timer",
         "Time alive stopwatch counter",
         "Dynamic project loading from JSON",
-        "Custom cursor effects and particles",
-        "Music player with volume control",
-        "Theme toggle (dark/light mode)",
+        "Clean minimal interaction system",
         "GitHub stats integration",
-        "Easter egg (AMAM code)"
+        "Focused information hierarchy"
       ],
       "tech": [
         "HTML5",
