@@ -27,3 +27,5 @@ Thumbs.db
 node_modules/
 Index/RESTRUCTURE_SUMMARY.md
 *.md
+.vercel
+.env*
