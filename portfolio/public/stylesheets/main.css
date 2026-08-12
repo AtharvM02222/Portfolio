@@ -1,0 +1,28 @@
+body {
+  background: #0D0D0D;
+  color: #ffffff;
+}
+
+.brand {
+  font-size: 2vw;
+  margin-top: 25vw;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+#strike {
+  font-weight: bolder;
+  text-decoration: line-through;
+  color: #ffffff;
+}
+
+.rocket {
+  width: 22vw;
+  animation: bounce 2.2s infinite;
+}
