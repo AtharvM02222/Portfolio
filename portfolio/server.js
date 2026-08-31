@@ -1,3 +1,4 @@
+import { atharvm } from "atharv-mandlavdiya";
 import express from "express";
 import expressLayouts from "express-ejs-layouts";
 import { fileURLToPath } from "url";
@@ -32,5 +33,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => {
-  console.log(`Atharv Mandlavdiya`);
+  atharvm();
 });
