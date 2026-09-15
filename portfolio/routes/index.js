@@ -7,4 +7,8 @@ router.get("/", (req, res) => {
   res.render("index", { title: "Portfolio", signature: sign() });
 });
 
+router.get("/work", (req, res) => {
+  res.render("work", { title: "Work" });
+});
+
 export default router;

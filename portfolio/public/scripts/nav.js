@@ -1,6 +1,7 @@
 customElements.whenDefined('ninja-keys').then(() => {
   document.querySelector('ninja-keys').data = [
     { id: 'home',        title: 'Home',                handler: () => location.href = '/' },
+    { id: 'work',        title: 'Work',                handler: () => location.href = '/work' },
     { id: 'github',      title: 'GitHub',              handler: () => window.open('https://github.com/AtharvM02222') },
     { id: 'linkedin',    title: 'LinkedIn',            handler: () => window.open('https://www.linkedin.com/in/atharvmandlavdiya') },
     { id: 'hackerrank',  title: 'HackerRank',          handler: () => window.open('https://www.hackerrank.com/profile/Atharv0M') },

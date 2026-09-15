@@ -1,0 +1,10 @@
+.projects {
+    height: 100vh;
+    margin: 0;
+
+    font-size: 15vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
