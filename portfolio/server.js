@@ -16,6 +16,7 @@ app.set("views", join(__dirname, "views"));
 app.use(expressLayouts);
 app.set("layout", "layout");
 app.use(express.static(join(__dirname, "public")));
+app.use('/atharv-mandlavdiya.js', express.static(join(__dirname, 'node_modules/atharv-mandlavdiya/atharvmandlavdiya.js')));
 
 app.use("/", indexRouter);
 
