@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Droid;
+  src: url("../fonts/Droid.ttf");
+}
+
 .signature {
     width: 100%;
     height: 98vh;
@@ -9,4 +14,10 @@
 #gh {
     width: 70%;
     font-size: 1rem;
+}
+
+#tag {
+    margin-left: 3vw;
+    font-size: 7.2vw;
+    font-family: Droid;
 }
