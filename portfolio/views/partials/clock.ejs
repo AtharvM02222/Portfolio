@@ -1,0 +1,16 @@
+<div class="about-clock">
+    <div id="clock"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flipclock@1.0.1/dist/FlipClock.umd.js"></script>
+<script>
+    const { flipClock, clock, theme, css } = FlipClock;
+
+    flipClock({
+        parent: document.getElementById('clock'),
+        face: clock(),
+        theme: theme({
+            css: css({ fontSize: '7vw' })
+        })
+    });
+</script>
